@@ -1,0 +1,25 @@
+figure>img{
+    width: 150px;
+    height: 185px;
+    background-color: rgba(81, 153, 105, 0);
+}
+
+figure{
+  
+      
+        box-shadow: 2px 2px 2px 2px gray;
+
+    
+}
+
+.preco-prod{
+    text-decoration: line-through;
+    font-size: 10pt;
+}
+
+.preco-prod{
+    text-decoration: line-through;
+    font-size: 10pt;
+    color: yellowgreen;
+}
+
