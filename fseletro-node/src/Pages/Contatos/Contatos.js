@@ -3,6 +3,9 @@ import { useState, useEffect} from 'react';
 
 import { Form, Button, Container, Row, Col, Alert } from 'react-bootstrap';
 
+import telefone from './telefone.png';
+import email from './email.png';
+
 export default function Contatos(){
   const [comentario, setComentario] = useState([]);
   const [render, setRender] = useState(false);
@@ -36,10 +39,20 @@ export default function Contatos(){
 
     return (
         
-    <Row>
-
-            
+    <Row>   
           <Container>
+
+            <Row>
+            <img src={telefone} alt="telefone" style={{ width: '100px' }} /> <br />
+          <p>11 94402 - 4000</p>
+
+          <img src={email} alt="email"  style={{ width: '120px' }} /> <br />
+          <p>FsEletro@gmail.com</p> 
+
+            </Row>
+
+          
+
             <Form onSubmit={registrarComentario}>
               <Form.Group controlId="exampleForm.ControlInput1">
                   <Form.Label>Endereço de E-mail</Form.Label>

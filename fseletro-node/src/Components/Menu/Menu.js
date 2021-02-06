@@ -6,7 +6,7 @@ import './Menu.css';
 function BaseMenu(props){
     const { location } = props;
     return (
-        <Navbar className="navbar-dark" bg="success" expand="lg" fixed="top">
+        <Navbar className="navbar-dark" expand="lg" fixed="top" style={{ background: '#003c86' }}>
             <Navbar.Brand>
                 FullStackEletro REACT
             </Navbar.Brand>

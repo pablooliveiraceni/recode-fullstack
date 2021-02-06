@@ -1,9 +1,11 @@
 import './produto.css';
 
-import Categorias from '../../Components/Categorias/Categorias';
-import ComponenteProdutos from '../../Components/Produtos/produtos.js'
-import { useState, useEffect} from 'react';
+import { useState, useEffect, lazy, Suspense} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+
+const Categorias = lazy(() => import('../../Components/Categorias/Categorias'));
+const ComponenteProdutos = lazy(() => import('../../Components/Produtos/produtos.js'));
+
 
 
 export default function Produtos(){
@@ -26,13 +28,19 @@ export default function Produtos(){
                          <h1>Produtos</h1> <hr/>
                      <Row>
                          <Col xs = {2}>
-                             <Categorias />
+                             <Suspense fallback={<p>Carregando...</p>}>
+                                 <Categorias />
+                             </Suspense>
+                            
                          </Col>
                          <Col>
                          <Row>
 
                          {produtos && produtos.map(item =>
-                                <ComponenteProdutos key = {item.idproduto} categoria = {item.categoria} descrição = {item.descricao} imagem = {item.imagem} preco = {item.preco} precofinal = {item.precofinal} />
+                                <Suspense fallback={<p>Carregando...</p>}>
+                                     <ComponenteProdutos key = {item.idproduto} categoria = {item.categoria} descrição = {item.descricao} imagem = {item.imagem} preco = {item.preco} precofinal = {item.precofinal} />
+                                </Suspense>
+                               
                             )}
                          </Row>
                          </Col>

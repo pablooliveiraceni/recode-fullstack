@@ -4,16 +4,17 @@ export default function ComponenteProdutos(props){
 
 
     function show_info(event){
-        const target = event.currentTarget;
+       /* const target = event.currentTarget;
         const elemento = target.getElementsByTagName("figcaption")[0];
-        elemento.style.visibility = "initial";
+       
+        elemento.style.visibility = "initial";*/
     }
 
     function hide_info(event){
-        const target = event.currentTarget;
+       /* const target = event.currentTarget;
         const elemento = target.getElementsByTagName("figcaption")[0];
-        elemento.style.visibility = "hidden";
-    }
+        elemento.style.visibility = "hidden";*/
+    } 
 
     return(
 

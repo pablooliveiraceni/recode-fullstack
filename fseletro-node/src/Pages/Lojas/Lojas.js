@@ -1,52 +1,44 @@
+import {lazy, Suspense} from 'react';
+
+import { Row } from 'react-bootstrap';
+
+const ComponenteLoja = lazy(() => import('../../Components/Lojas/lojas.js'));
+
 export default function Lojas(){
     
     return (
             <>
+            <Row>
+                <Suspense fallback={<p>Carregando...</p>}>
+                <ComponenteLoja 
+                cidade="São Paulo"
+                endereco="Avenidade Paulista, 985" 
+                andar="3 º andar"
+                distrito="Jardins"
+                numero="(11) 4444-4444"/>
+                </Suspense>
 
-<ListGroup>
-  <ListGroup.Item>Cras justo odio</ListGroup.Item>
-  <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-  <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-  <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-  <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-</ListGroup>
-                <h1>Nossas Lojas</h1> <hr />
-                <table class="table">
-                    <thead class="thead-light">
-                        <tr>
-                            <th scope="col">Cidade</th>
-                            <th scope="col">Endereço</th>
-                            <th scope="col">Número</th>
-                            <th scope="col">Proximidade</th>
-                            <th scope="col">Telefone</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Rio de Janeiro</th>
-                            <td>Avenida Presidente Vargas, 5000</td>
-                            <td>10 &ordm; andar</td>
-                            <td>Centro</td>
-                            <td>(21) 3333-3333</td>
-                        </tr>
+                <Suspense fallback={<p>Carregando...</p>}>
+                <ComponenteLoja 
+                cidade="Rio de Janeiro"
+                endereco="Avenida Presidente Vargas, 5000" 
+                andar="10 º andar"
+                distrito="Centro"
+                numero="(21) 3333-3333"/>
+                </Suspense>
 
-                        <tr>
-                            <th scope="row">São Paulo</th>
-                            <td>Avenidade Paulista, 985</td>
-                            <td>3 &ordm; andar</td>
-                            <td>Jardins</td>
-                            <td>(11) 4444-4444</td>
-                        </tr>
-                        
-                        <tr>
-                            <th scope="row">Santa Catarina</th>
-                            <td>Rua Major &Aacute; vila, 370</td>
-                            <td>5 &ordm; andar</td>
-                            <td>Nordeste</td>
-                            <td>(47) 5555-5555</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <Suspense fallback={<p>Carregando...</p>}>
+                <ComponenteLoja 
+                cidade="Santa Catarina"
+                endereco="Rua Major Á vila, 370" 
+                andar="5 º andar"
+                distrito="Nordeste"
+                numero="(47) 5555-5555"/>
+                </Suspense>
+            </Row>
+           
+
+           
             </>
     );
 }
